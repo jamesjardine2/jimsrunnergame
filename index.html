@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Jim's Runner Game</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jim's Runner">
+<link rel="apple-touch-icon" href="icon.png">
 <style>
   :root{ --paper:#f6f2e8; --pencil:#3a3a3a; --pencil-light:#8a8a86; }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -14,7 +19,7 @@
     color:var(--pencil);
     display:flex;flex-direction:column;height:100%;
   }
-  header{padding:8px 16px 2px;text-align:center;flex:0 0 auto}
+  header{padding:calc(8px + env(safe-area-inset-top)) 16px 2px;text-align:center;flex:0 0 auto}
   header h1{font-size:clamp(20px,4vw,30px);letter-spacing:1px}
   header p{font-size:clamp(10px,1.8vw,13px);color:var(--pencil-light)}
   #stage{flex:1 1 auto;position:relative;min-height:0}
@@ -27,7 +32,7 @@
   #hearts{letter-spacing:3px;font-size:clamp(18px,3vw,26px)}
   #power{font-size:clamp(11px,2vw,14px);color:var(--pencil-light)}
   #touch{
-    position:absolute;left:0;right:0;bottom:10px;
+    position:absolute;left:0;right:0;bottom:calc(10px + env(safe-area-inset-bottom));
     display:flex;justify-content:space-between;padding:0 14px;pointer-events:none;
   }
   .tgroup{display:flex;gap:12px;pointer-events:auto}
